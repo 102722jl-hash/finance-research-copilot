@@ -117,8 +117,21 @@ python 一键回归.py              # 默认 L1+L2；--只L1 最快；--含LLM �
 ├── 一键回归.py / 金标准集.py           评测回归
 ├── stock_names.json / stock_aliases.json / 字段映射.json   数据映射
 ├── screenshots/                     界面截图
+├── samples/                         样例文档
 ├── .env.example / requirements.txt / 启动服务.cmd
 ```
+
+## 附：样例文档
+
+本仓库收录一份「视频 → 结构化研究笔记」的样例（由开源工具 BiliNote 生成），点击链接即可查看完整 Markdown：
+
+- 📄 [【巫师】机器人产业，真的只配叫玩具厂吗？](samples/robotics-industry-note.md)
+
+生成过程（BiliNote 界面：要点笔记 / 思维导图）：
+
+![笔记生成](samples/bilinote-note-view.png)
+
+![思维导图](samples/bilinote-mindmap.png)
 
 ## 已知边界
 
