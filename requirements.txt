@@ -1,0 +1,29 @@
+# 金融投研 Copilot 运行时依赖（部署到云服务器用 pip install -r 装齐即可）
+#
+# 说明：
+# - 本 agent 的 embedding 是**走网关的远程 HTTP 调用**（bge-large-zh），
+#   所以**不需要** torch / sentence-transformers —— 依赖很轻。
+# - 向量库是自研 numpy 存储（vector_store.py），**不需要** chromadb。
+# - 密钥/密码走环境变量（.env），不进代码。
+
+langgraph==1.2.14
+langchain-openai
+pymysql
+requests
+fastapi
+uvicorn
+mcp
+langchain-mcp-adapters
+# tavily-python -> search_mcp_server.py 的 web_search（import 名是 `tavily`，包名是 tavily-python）
+tavily-python
+openpyxl
+
+# ⚠️ 之前漏写的（运行时链路会 import，缺了会在启动时报 ModuleNotFoundError）：
+# numpy              -> schema_index / vector_store 读写 .npy 向量库
+# langchain-text-splitters -> rag_ingest（被 schema_index / rag_search 间接 import）
+# pypdf              -> rag_ingest（同上）
+# akshare            -> realtime_tool / mcp_bridge / macro_mcp_server（实时行情 + 宏观 + 公开财报）
+numpy
+langchain-text-splitters
+pypdf
+akshare==1.19.1
