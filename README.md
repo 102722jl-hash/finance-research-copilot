@@ -12,6 +12,20 @@
 - 答案里每个数值都会被逐条核对有没有出处，核不过的整条拦下；
 - 越界问题（买卖建议 / 涨跌预测）直接拒答。
 
+## 界面预览
+
+系统自述能力边界，并给出可直接追问的示例：
+
+![能力边界说明](screenshots/01-capability-overview.png)
+
+行业级聚合（跨公司口径），回答中标注数据来源与口径：
+
+![行业聚合](screenshots/02-industry-aggregation.png)
+
+与投研无关的问题会被直接拒答，并说明分诊依据：
+
+![越界拒答](screenshots/03-rejection.png)
+
 ## 核心能力
 
 | 能力 | 说明 |
@@ -102,6 +116,7 @@ python 一键回归.py              # 默认 L1+L2；--只L1 最快；--含LLM �
 ├── run.py / run_multi.py / cli.py   命令行入口
 ├── 一键回归.py / 金标准集.py           评测回归
 ├── stock_names.json / stock_aliases.json / 字段映射.json   数据映射
+├── screenshots/                     界面截图
 ├── .env.example / requirements.txt / 启动服务.cmd
 ```
 
